@@ -16,7 +16,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n\"username\":\"student\",\r\n\"password\":\"123456\"\r\n}",
+              "raw": "{\r\n\"username\":\"student\",\r\n\"password\":\"\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -24,12 +24,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/auth/login",
-              "protocol": "http",
+              "raw": "{{base_url}}/api/auth/login",
               "host": [
-                "localhost"
+                "{{base_url}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "auth",
@@ -46,7 +44,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n\"username\":\"student\",\r\n\"password\":\"123456\"\r\n}",
+              "raw": "{\r\n\"username\":\"Teriri\",\r\n\"password\":\"123456\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -54,12 +52,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/auth/login",
-              "protocol": "http",
+              "raw": "{{base_url}}/api/auth/login",
               "host": [
-                "localhost"
+                "{{base_url}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "auth",
@@ -77,7 +73,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  ""
+                  "pm.test(\"Status OK\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Response time is less than 100ms\", () => { pm.expect(pm.response.responseTime).to.be.below(100);\r\n});"
                 ]
               }
             }
@@ -95,12 +91,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/auth/login",
-              "protocol": "http",
+              "raw": "{{base_url}}/api/auth/login",
               "host": [
-                "localhost"
+                "{{base_url}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "auth",
@@ -196,10 +190,39 @@
         {
           "name": "TC007 - CP323001 Course Sucessful Copy",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0mal}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
-              "raw": ""
+              "raw": "http://localhost:3000/api/courses/CP323001",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "courses",
+                "CP323001"
+              ]
             }
           },
           "response": []
@@ -218,10 +241,28 @@
         {
           "name": "TC009 - Endpoint not found",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "http://localhost:3000/api/courses/math",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
             "url": {
-              "raw": ""
+              "raw": "{{base_url}}/api/courses/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                ""
+              ]
             }
           },
           "response": []
@@ -243,6 +284,20 @@
           "response": []
         }
       ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0mal",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1djw",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_150f",
+      "secret": true
     }
   ]
 }
