@@ -115,7 +115,15 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": ""
+              "raw": "{{base_url}}/api/students/663020003",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "663020003"
+              ]
             }
           },
           "response": []
@@ -264,12 +272,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/courses/CP323001",
-              "protocol": "http",
+              "raw": "{{base_url}}/api/courses/CP323001",
               "host": [
-                "localhost"
+                "{{base_url}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "courses",
