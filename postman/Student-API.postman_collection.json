@@ -123,10 +123,37 @@
         {
           "name": "TC004 - Get Inactive Student Sucess",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_150f}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
-              "raw": ""
+              "raw": "{{base_url}}/api/students/663020002",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "663020002"
+              ]
             }
           },
           "response": []
@@ -144,7 +171,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0dWRlbnQiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTc4OTcwNTI0MiwiZXhwIjoxNzg5NzA4ODQyfQ.Rr07wya8CBzuwC3Cx0-IJTK_wOrJTvwxHmQspZVEpE4",
+                  "value": "{{json_web_token_0mal}}",
                   "type": "string"
                 }
               ]
@@ -153,7 +180,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"courseId\": \"CP321000\",\r\n    \"courseName\": \"Software Testing\",\r\n    \"credits\": 3,\r\n    \"capacity\": 30,\r\n    \"enrolled\": 10\r\n}",
+              "raw": "",
               "options": {
                 "raw": {
                   "language": "json"
@@ -161,12 +188,10 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/courses/CP321001",
-              "protocol": "http",
+              "raw": "{{base_url}}/api/courses/CP321001",
               "host": [
-                "localhost"
+                "{{base_url}}"
               ],
-              "port": "3000",
               "path": [
                 "api",
                 "courses",
@@ -179,10 +204,37 @@
         {
           "name": "TC006 - CP322001 Course Sucessful Copy 2",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0mal}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
-              "raw": ""
+              "raw": "{{base_url}}/api/courses/CP322001",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "CP322001"
+              ]
             }
           },
           "response": []
@@ -230,10 +282,37 @@
         {
           "name": "TC008 - Course not found",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_1djw}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
-              "raw": ""
+              "raw": "{{base_url}}/api/courses/math",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "math"
+              ]
             }
           },
           "response": []
@@ -275,10 +354,28 @@
         {
           "name": "TC010 - Deleted course",
           "request": {
-            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0mal}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
             "header": [],
             "url": {
-              "raw": ""
+              "raw": "{{base_url}}/api/663020003/CP321001",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "663020003",
+                "CP321001"
+              ]
             }
           },
           "response": []
